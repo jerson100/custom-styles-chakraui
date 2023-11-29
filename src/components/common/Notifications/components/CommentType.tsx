@@ -1,5 +1,5 @@
 import { Notification, comment } from "../../../../types/notification";
-import { Box, Link, Text } from "@chakra-ui/react";
+import { Link, Text } from "@chakra-ui/react";
 import NotificationWrapper from "./NotificationWrapper";
 import ReadCircle from "./ReadCircle";
 import { formatDate } from "../../../../utils/date";
