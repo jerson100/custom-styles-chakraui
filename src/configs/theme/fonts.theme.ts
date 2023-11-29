@@ -5,6 +5,6 @@ export default {
   },
   fontSizes: {
     heading1:
-      "clamp(1.25rem, 1.0769230769230769rem + 0.7692307692307693vw, 2rem);",
+      "clamp(1.25rem, 1.1778846153846154rem + 0.3205128205128205vw, 1.5625rem);",
   },
 };

@@ -32,14 +32,8 @@ export type followed = {
   user: User;
 };
 
-export type joinGroup = {
-  type: "join-group";
-  group: Group;
-  user: User;
-};
-
-export type leftGroup = {
-  type: "left-group";
+export type GroupType = {
+  type: "left-group" | "join-group";
   group: Group;
   user: User;
 };
@@ -51,8 +45,11 @@ export type sendMessage = {
 
 export type comment = {
   type: "comment";
-  post: Post;
-  user: User;
+  comment: {
+    user: User;
+    post: Post;
+    description: string;
+  };
 };
 
 export type Notification = {
@@ -66,4 +63,4 @@ export type Notification = {
     | "comment";
   createdAt: string;
   read: boolean;
-} & (reaction | followed | joinGroup | leftGroup | sendMessage | comment);
+} & (reaction | followed | GroupType | sendMessage | comment);

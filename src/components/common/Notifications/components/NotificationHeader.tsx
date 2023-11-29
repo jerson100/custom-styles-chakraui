@@ -1,6 +1,14 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
 
-const NotificationHeader = () => {
+interface NotificationHeaderProps {
+  handleMarkAll: () => void;
+  numberOfUnRead: number;
+}
+
+const NotificationHeader = ({
+  handleMarkAll,
+  numberOfUnRead,
+}: NotificationHeaderProps) => {
   return (
     <Flex justifyContent={"space-between"} alignItems={"center"}>
       <Flex gap={3} alignItems={"center"}>
@@ -19,7 +27,7 @@ const NotificationHeader = () => {
           alignItems={"center"}
           fontWeight={"bold"}
         >
-          3
+          {numberOfUnRead}
         </Flex>
       </Flex>
       <Text
@@ -29,6 +37,12 @@ const NotificationHeader = () => {
           lg: "md",
         }}
         color={"darkGrayishBlue"}
+        cursor={"pointer"}
+        onClick={handleMarkAll}
+        _hover={{
+          color: "blue.custom",
+          //   fontWeight: "bold",
+        }}
       >
         Mark all as read
       </Text>
