@@ -1,8 +1,6 @@
-import { Box, Link, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import NotificationWrapper from "./NotificationWrapper";
 import { sendMessage, Notification } from "../../../../types/notification";
-import ReadCircle from "./ReadCircle";
-import { formatDate } from "../../../../utils/date";
 
 type SendMessageTypeProps = Omit<Notification, "type"> & {
   sendMessage: sendMessage;
