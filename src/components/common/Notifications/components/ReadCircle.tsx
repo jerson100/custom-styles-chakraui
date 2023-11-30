@@ -12,9 +12,16 @@ const ReadCircle = ({ read }: ReadCircleProps) => {
           display={"inline-flex"}
           borderRadius={"900"}
           ml={1.5}
+          as={"span"}
           bg={"red.custom"}
-          w={2.5}
-          h={2.5}
+          w={{
+            base: 2,
+            lg: 2.5,
+          }}
+          h={{
+            base: 2,
+            lg: 2.5,
+          }}
         ></Box>
       )}
     </>

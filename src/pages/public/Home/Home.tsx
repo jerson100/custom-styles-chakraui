@@ -13,7 +13,8 @@ const Home = () => {
       alignItems={"center"}
     >
       <Container
-        p={{ base: 4, lg: 8 }}
+        px={{ base: 4, lg: 8 }}
+        py={{ base: 6, lg: 8 }}
         maxW={"3xl"}
         backgroundColor={"white.custom"}
       >

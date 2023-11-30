@@ -163,7 +163,7 @@ const Notifications = () => {
     return notifications.filter(({ read }) => !read).length;
   }, [notifications]);
   return (
-    <Flex gap={8} flexDir={"column"}>
+    <Flex gap={{ base: 4, lg: 8 }} flexDir={"column"}>
       <NotificationHeader
         numberOfUnRead={numberOfUnRead}
         handleMarkAll={handleMarkAll}

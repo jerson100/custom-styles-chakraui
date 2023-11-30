@@ -1,8 +1,5 @@
 import { Notification, comment } from "../../../../types/notification";
-import { Link, Text } from "@chakra-ui/react";
 import NotificationWrapper from "./NotificationWrapper";
-import ReadCircle from "./ReadCircle";
-import { formatDate } from "../../../../utils/date";
 
 type CommentTypeProps = Omit<Notification, "type"> & {
   data: comment;
@@ -16,22 +13,14 @@ const CommentType = ({
 }: CommentTypeProps) => {
   return (
     <NotificationWrapper to={id} image={comment.user.avatar}>
-      <Text as={"p"}>
-        <Link
-          href={`
-            /profile/${comment.user.id}`}
-          _hover={{ color: "blue.custom" }}
-          fontWeight={"bold"}
-          mr={1}
-        >
-          {comment.user.name}
-        </Link>
+      <NotificationWrapper.Header
+        read={read}
+        userId={comment.user.id}
+        userName={comment.user.name}
+      >
         commented on your post
-        <ReadCircle read={read} />
-      </Text>
-      <Text as="p" color="grayishBlue">
-        {formatDate(createdAt)}
-      </Text>
+      </NotificationWrapper.Header>
+      <NotificationWrapper.Date createdAt={createdAt} />
     </NotificationWrapper>
   );
 };
